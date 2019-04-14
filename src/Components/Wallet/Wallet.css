@@ -34,6 +34,22 @@
     border: .2rem solid #333;
 }
 
+.wallet__graph__header {
+    /* display: flex;
+    flex-flow: row wrap; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "header";
+    justify-content: center;
+    align-items: center;
+}
+
+.wallet__graph__title {
+    grid-area: header;
+    text-align: center;
+}
+
 .totals-box__toggle {
     justify-self: flex-end;
     display: flex;
@@ -60,7 +76,7 @@
 }
 
 .wallet__graph__toggle {
-    width: 100%;
+    grid-area: header;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;

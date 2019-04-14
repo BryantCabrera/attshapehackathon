@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import './Wallet.css';
 import ModalSection from '../Modal/ModalSection'
 
@@ -8,7 +8,7 @@ export default class Wallet extends Component {
         depositTotal: 1105.02,
         netGainTotal: 2817.21,
         balance: 3922.23,
-        graphData: [{ name: 'date1', earnings: 400, bets: 2400, amt: 2400 }, { name: 'date2', earnings: 200, bets: 1200, amt: 2000 }]
+        graphData: [{ name: 'April 1, 2019', earnings: 400 }, { name: 'April 2, 2019', earnings: 200 }, { name: 'April 3, 2019', earnings: 700 }, { name: 'April 4, 2019', earnings: 800 }, { name: 'April 5, 2019', earnings: 1000 }]
     }
 
     render() {
@@ -36,14 +36,19 @@ export default class Wallet extends Component {
                 </div>
 
                 <div className="wallet__graph">
-                    <ul className="wallet__graph__toggle totals-box__toggle">
-                        <li><a href="#">Week</a></li>
-                        <li><a href="#">Month</a></li>
-                        <li><a href="#">Total</a></li>
-                    </ul>
+                    <div className="wallet__graph__header">
+                        <h2 className="wallet__graph__title">Activity</h2>
+
+                        <ul className="wallet__graph__toggle totals-box__toggle">
+                            <li><a href="#">Week</a></li>
+                            <li><a href="#">Month</a></li>
+                            <li><a href="#">Year</a></li>
+                        </ul>
+                    </div>
                     <ResponsiveContainer maxWidth={400} maxHeight={400} minHeight={100}>
                         <LineChart width={725} height={300} data={this.state.graphData}>
                             <XAxis dataKey='name' />
+                            <YAxis />
                             <CartesianGrid stroke="#ccc" strokeDasharray='5 5' />
                             <Tooltip />
                             <Line type='monotone' dataKey='earnings' stroke='#0000ff' />
