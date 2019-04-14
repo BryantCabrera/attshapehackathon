@@ -2,11 +2,12 @@
 
 ## A. Description
 attshapehackathon is a React app that was built in 1.5 days by: 
-Bryant Cabrera - Full Stack Software Engineer, 
-Kevin Cuison - Full Stack Software Engineer, 
-Abraham - Full Stack Software Engineer,
-Hann-Wei Chang - UX Designer, 
-Tianyu Li - UX Designer
+1.  Bryant Cabrera - Full Stack Software Engineer, 
+2.  Kevin Cuison - Full Stack Software Engineer, 
+3.  Abraham - Front-End Developer,
+4.  AC De Leon - Front-End Developer,
+5.  Hann-Wei Chang - UX Designer, 
+6.  Tianyu Li - UX Designer
 
 ## B. User Stories
 
