@@ -31,7 +31,7 @@ class Nav extends Component {
           Browse
         </Link>
         {this.props.loggedUser._id ? 
-          <Link to="/:id/earnings" className="nav__link">
+          <Link to="/:id/wallet" className="nav__link">
             Earnings
           </Link>
           :

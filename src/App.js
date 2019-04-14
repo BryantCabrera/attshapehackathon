@@ -5,7 +5,7 @@ import Login from "./Components/Auth/Login/Login"
 import Register from "./Components/Auth/Login/Register";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Bet from './Components/Bet/Bet';
-import Earnings from './Components/Earnings/Earnings';
+import Wallet from './Components/Wallet/Wallet';
 import Nav from "./Components/Nav/Nav"
 
 class App extends Component {
@@ -82,7 +82,7 @@ class App extends Component {
                     <Route exact path="/register" component={() => <Register />} />
                     <Route exact path="/" component={() => <Dashboard />} />
                     <Route exact path="/bet" component={() => <Bet />} />
-                    <Route exact path="/:id/earnings" component={() => <Earnings />} />
+                    <Route exact path="/:id/wallet" component={() => <Wallet />} />
                     <Route exact path="/live-match" component={() => <Video />} />
                 </Switch>
             </div>

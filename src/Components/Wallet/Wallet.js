@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import './Earnings.css';
+import './Wallet.css';
 import ModalSection from '../Modal/ModalSection'
 
-export default class Dashboard extends Component {
+export default class Wallet extends Component {
     state = {
         earningsTotal: 3922.23,
         betsTotal: 1829.21,

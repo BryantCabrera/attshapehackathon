@@ -67,7 +67,7 @@
 
 .totals-box__toggle li a:hover,
 .totals-box__toggle li a:active {
-    border-bottom: .1rem solid #333;
+    border-bottom: .2rem solid #333;
 }
 
 .totals-box__total {
