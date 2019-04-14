@@ -1,0 +1,87 @@
+.container {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-areas: "dashboard__game-grid--1-0 dashboard__game-grid--1-4 dashboard__game-grid--1-7 dashboard__game-grid--1-10 dashboard__game-grid--1-13 dashboard__game-grid--1-16"
+  "dashboard__game-grid--1-2 dashboard__game-grid--1-5 dashboard__game-grid--1-8 dashboard__game-grid--1-11 dashboard__game-grid--1-14 dashboard__game-grid--1-17"
+  "dashboard__game-grid--1-3 dashboard__game-grid--1-6 dashboard__game-grid--1-9 dashboard__game-grid--1-12 dashboard__game-grid--1-15 dashboard__game-grid--1-18";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 30px;
+}
+.container > div {
+  border: none;
+}
+
+.dashboard__game-grid--1-0 {
+  grid-area: dashboard__game-grid--1-0;
+}
+.dashboard__game-grid--1-4 {
+  grid-area: dashboard__game-grid--1-4;
+}
+.dashboard__game-grid--1-7 {
+  grid-area: dashboard__game-grid--1-7;
+}
+.dashboard__game-grid--1-10 {
+  grid-area: dashboard__game-grid--1-10;
+}
+.dashboard__game-grid--1-13 {
+  grid-area: dashboard__game-grid--1-13;
+}
+.dashboard__game-grid--1-16 {
+  grid-area: dashboard__game-grid--1-16;
+}
+.dashboard__game-grid--1-2 {
+  grid-area: dashboard__game-grid--1-2;
+}
+.dashboard__game-grid--1-5 {
+  grid-area: dashboard__game-grid--1-5;
+}
+.dashboard__game-grid--1-8 {
+  grid-area: dashboard__game-grid--1-8;
+}
+.dashboard__game-grid--1-11 {
+  grid-area: dashboard__game-grid--1-11;
+}
+.dashboard__game-grid--1-14 {
+  grid-area: dashboard__game-grid--1-14;
+}
+.dashboard__game-grid--1-17 {
+  grid-area: dashboard__game-grid--1-17;
+}
+.dashboard__game-grid--1-3 {
+  grid-area: dashboard__game-grid--1-3;
+}
+.dashboard__game-grid--1-6 {
+  grid-area: dashboard__game-grid--1-6;
+}
+.dashboard__game-grid--1-9 {
+  grid-area: dashboard__game-grid--1-9;
+}
+.dashboard__game-grid--1-12 {
+  grid-area: dashboard__game-grid--1-12;
+}
+.dashboard__game-grid--1-15 {
+  grid-area: dashboard__game-grid--1-15;
+}
+.dashboard__game-grid--1-18 {
+  grid-area: dashboard__game-grid--1-18;
+}
+
+.dashboard__game--pictures1 {
+  max-width: 150px;;
+}
+
+.dashboard__game--stats {
+  text-align: center;
+  line-height: 0.2;
+  font-size:0.92rem;
+}
+
+.dashboard__game--title {
+  color: blue;
+}
+
+.dashboard__game--viewersamount {
+  color: gray;
+}

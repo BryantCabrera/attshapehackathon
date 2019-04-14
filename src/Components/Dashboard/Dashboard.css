@@ -1,99 +1,21 @@
 .dashboard__maincontainer {
-    margin: 15px;
-}
-
-.dashboard__userprofile--container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 50%;
-}
-
-.dashboard__userprofile {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-    width: 50%;
-
-}
-
-.dashboard__userprofile--info {
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.2);
-}
-
-.dashboard__userprofile--pictures {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    width: 40%;
-}
+    width: 98%;
+    height: 100%;
+    grid-template-areas: "dashboard__betting dashboard__games"
+    "dashboard__betting dashboard__games";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 80px;
+  }
+  .container > div {
+    border: 1px dashed #888;
+  }
+  
+  .dashboard__betting {
+    grid-area: dashboard__betting;
+    background-color: #004976;
 
-.dashboard__userprofile--pictures1 {
-    /* background: #000000f3; */
-    max-width: 103px;
-    /* animation: animateGrid 0.5s */
-}
-
-.dashboard__userprofile--img {
-    max-width: 170px;
-    padding: 2rem;
-    border-radius: 50%;
-}
-
-
-.dashboard__userprofile--searchbar {
-    margin-bottom: 2rem;
-    width: 560px;
-    height: 1.5rem;
-    border-radius: 20px;
-    border: solid 4px rgba(155, 155, 155, 0.2);
-    padding-left: 1rem;
-}
-
-.dashboard__userprofile--name {
-    height: 41px;
-    font-family: Avenir;
-    font-size: 30px;
-    font-weight: 900;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #1881c3;
-    padding-bottom: 2.3rem;
-}
-
-.dashboard__userprofile--links {
-    /* width: 98px; */
-    height: 41px;
-    font-family: Avenir;
-    font-size: 1.5rem;
-    font-weight: 600;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
-    color: #000000;
-    padding: .5rem;
-}
-
-button {
-    background: none;
-    border: none;
-    margin: .5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-h6 {
-    text-align: center;
-}
+  }
+  .dashboard__game {
+    grid-area: dashboard__games;
+  }
