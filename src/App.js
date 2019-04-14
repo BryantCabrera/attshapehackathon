@@ -10,8 +10,7 @@ import Nav from "./Components/Nav/Nav"
 
 class App extends Component {
     state = {
-        loggedUser: {},
-        betAmount: 0
+        loggedUser: {}
     };
 
     doLoginUser = async user => {
@@ -74,12 +73,6 @@ class App extends Component {
         }
     };
 
-    changeBet = (bet) => {
-        this.setState({
-            betAmount: bet
-        })
-    }
-
     render() {
         return (
             <div>
@@ -90,7 +83,7 @@ class App extends Component {
                     <Route exact path="/" component={() => <Dashboard newBet={this.state.betAmount} />} />
                     <Route exact path="/bet" component={(props) => <Bet {...props} history={this.props.history} />} />
                     <Route exact path="/:id/wallet" component={() => <Wallet />} />
-                    <Route exact path="/live-match" component={() => <Video changeBet={this.changeBet} newBet={this.state.betAmount} />} />
+                    <Route exact path="/live-match" component={() => <Video />} />
                 </Switch>
             </div>
         );
