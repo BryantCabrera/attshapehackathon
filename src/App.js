@@ -88,9 +88,9 @@ class App extends Component {
                     <Route exact path="/login" component={() => <Login doLoginUser={this.doLoginUser}/>}/>
                     <Route exact path="/register" component={() => <Register />} />
                     <Route exact path="/" component={() => <Dashboard newBet={this.state.betAmount} />} />
-                    <Route exact path="/bet" component={() => <Bet changeBet={this.changeBet} />} />
+                    <Route exact path="/bet" component={(props) => <Bet {...props} history={this.props.history} />} />
                     <Route exact path="/:id/wallet" component={() => <Wallet />} />
-                    <Route exact path="/live-match" component={() => <Video />} />
+                    <Route exact path="/live-match" component={() => <Video changeBet={this.changeBet} newBet={this.state.betAmount} />} />
                 </Switch>
             </div>
         );

@@ -14,7 +14,7 @@ class Dashboard extends Component {
         return (
             <div className="dashboard__maincontainer">
                 <div className="dashboard__betting">
-                    <DashboardBet newBet={this.props.betAmount} />
+                    <DashboardBet newBet={this.props.newBet} />
                 </div>
                 <div className="dashboard__game">
                     <Games />

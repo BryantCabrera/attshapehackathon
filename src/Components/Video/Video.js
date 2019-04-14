@@ -9,7 +9,7 @@ export default class Video extends Component {
       <div className="video__main-container">
 
         <div className="active__bets">
-          <DashboardBet />
+          <DashboardBet newBet={this.props.newBet} />
         </div>
 
 
@@ -23,7 +23,7 @@ export default class Video extends Component {
             height="700px"
             width="100%"
           />
-          <Bet />
+          <Bet changeBet={this.props.changeBet} />
         </div>
         <div className="video__chat">
           <iframe

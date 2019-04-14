@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import './Bet.css';
 
-export default class Bet extends Component {
+class Bet extends Component {
     state = {
         chosenTeam: 'draw',
-        input: 20,
+        input: 0,
         teamA: {name: 'FNC', odds: 1.25},
         teamACheckbox: '',
         teamBCheckbox: '',
@@ -96,9 +97,11 @@ export default class Bet extends Component {
                 <div className="bet__input">
                     <div className="bet__input__payout bet__input--input">Est. payout: ${this.state.estimate}</div>
                     <input type="number" className="bet__input__bet bet__input--input" name="input" value={this.state.input} placeholder="Enter an amount to bet" onChange={this.handleChange}></input>
-                    <button className="bet__input__btn bet__input--input" onSubmit={() => this.props.changeBet(this.state.input)}>Confirm</button>
+                    <button className="bet__input__btn bet__input--input" onClick={() => this.props.changeBet(this.state.input)}>Confirm</button>
                 </div>
             </div>
         );
     }
 }
+
+export default withRouter(Bet);
