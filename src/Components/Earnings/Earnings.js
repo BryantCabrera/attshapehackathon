@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import './Earnings.css';
+import ModalSection from '../Modal/ModalSection'
 
 export default class Dashboard extends Component {
     state = {
         earningsTotal: 3922.23,
         betsTotal: 1829.21,
-        graphData: [{name: 'date1', earnings: 400, bets: 2400, amt: 2400}, {name: 'date2', earnings: 200, bets: 1200, amt: 2000}]
+        graphData: [{ name: 'date1', earnings: 400, bets: 2400, amt: 2400 }, { name: 'date2', earnings: 200, bets: 1200, amt: 2000 }]
     }
 
     render() {
@@ -24,7 +25,8 @@ export default class Dashboard extends Component {
                     <div className="totals-box__total">
                         <h2>${this.state.earningsTotal}</h2>
                     </div>
-
+                    
+                    <ModalSection />
                     <button className="totals-box__btn">Cash Out</button>
                 </div>
 
@@ -41,7 +43,11 @@ export default class Dashboard extends Component {
                         <h2>${this.state.betsTotal}</h2>
                     </div>
 
+
+                    <ModalSection />
                     <button className="totals-box__btn">Cash Out</button>
+
+
                 </div>
 
                 <div className="earnings__graph">
@@ -63,4 +69,3 @@ export default class Dashboard extends Component {
         );
     }
 }
-  

@@ -9,7 +9,6 @@
                          "teamA stats teamB";
     justify-content: center;
     align-items: center;
-    padding: 5rem;
 }
 
 .bet__title {
@@ -32,7 +31,7 @@
 
 .bet__teamA, 
 .bet__teamB {
-    border: 1px dashed black;
+    /* border: 1px dashed black; */
 }
 
 /***** Team Grid *****/
@@ -46,6 +45,7 @@
                          "btn btn";
     justify-content: center;
     align-items: center;
+    font-size: .8rem;
 }
 
 .bet__team__title {
@@ -92,4 +92,5 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    font-size: .8rem
 }

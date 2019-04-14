@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import Modal from '../Modal/ModalComp'
 import "./Nav.css";
 
 class Nav extends Component {
@@ -7,40 +8,55 @@ class Nav extends Component {
     loggedIn: false,
   };
 
+  handleSubmit = () => {
+    this.props.history.push(`/live-match`);
+  };
+
   render() {
-    const links = !this.props.loggedUser._id ? (
-      <nav className="ul__nav--logging">
-        <Link to="/login" className="ul__nav--link">
-          Login
-        </Link>
-        <Link to="/register" className="ul__nav--link">
-          Register
-        </Link>
-      </nav>
-    ) : (
-      <nav className="ul__nav--logging" >
-          <Link to="/dashboard" className="ul__nav--link" onClick={() => this.props.doLogoutUser()}>
-            Logout
-          </Link>
-      </nav>
+    const search = (
+      <div style={{ paddingLeft: "20px"}}>
+        <div className="search">
+          <form onSubmit={this.handleSubmit}>
+            <button><i className="fa fa-search"/></button>
+            <input type="text" placeholder="Search" className="search__form--input"/>
+          </form>
+        </div>
+      </div>
     );
 
     return (
-      <div className="ul">
-        <h2 className="ul__nav--link">LOGO</h2>
-        <nav>
-          <Link to="/dashboard" className="ul__nav--link">
-            Browse
-          </Link>
-          <Link to="/earnings" className="ul__nav--link">
+      <div className="nav">
+        <img src="/betsee.svg" alt="Logo" />
+        <Link to="/" className="nav__link">
+          Browse
+        </Link>
+        {this.props.loggedUser._id ? 
+          <Link to="/:id/earnings" className="nav__link">
             Earnings
           </Link>
-          <input type="text" placeholder="Search" className="ul__nav--link" />
-        </nav>
-        {links}
+          :
+          null
+        }
+        {search}
+        {this.props.loggedUser._id ? 
+          <nav className="nav__logging" >
+            <Link to="/" className="nav__link" onClick={() => this.props.doLogoutUser()}>
+              Logout
+            </Link>
+          </nav>
+          :
+          <nav className="nav__logging">
+            <Link to="/login" className="nav__link">
+              Login
+            </Link>
+            <Link to="/register" className="nav__link">
+              Register
+            </Link>
+          </nav>
+        }
       </div>
     );
   }
 }
 
-export default Nav;
+export default withRouter(Nav);

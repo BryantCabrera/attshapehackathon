@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import Video from "./Components/Video/Video";
-import Login from "./Components/Auth/Login/Login";
-import Register from "./Components/Auth/Register/Register";
+import Login from "./Components/Auth/Login/Login"
+import Register from "./Components/Auth/Login/Register";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Bet from './Components/Bet/Bet';
 import Earnings from './Components/Earnings/Earnings';
@@ -38,7 +38,7 @@ class App extends Component {
                 loggedUser: parsedResponse.data,
                 });
 
-                this.props.history.push(`/dashboard`);
+                this.props.history.push(`/`);
             } else {
                 this.setState({
                 loginError: parsedResponse.message,
@@ -78,16 +78,12 @@ class App extends Component {
             <div>
               <Nav doLogoutUser={this.doLogoutUser} loggedUser={this.state.loggedUser}/>
                 <Switch>
-                    <Route
-                        exact
-                        path="/login"
-                        component={() => <Login doLoginUser={this.doLoginUser} />}
-                    />
+                    <Route exact path="/login" component={() => <Login doLoginUser={this.doLoginUser}/>}/>
                     <Route exact path="/register" component={() => <Register />} />
-                    <Route exact path="/dashboard" component={() => <Dashboard />} />
+                    <Route exact path="/" component={() => <Dashboard />} />
                     <Route exact path="/bet" component={() => <Bet />} />
                     <Route exact path="/:id/earnings" component={() => <Earnings />} />
-                     <Route exact path="/live-match" component={() => <Video />} />
+                    <Route exact path="/live-match" component={() => <Video />} />
                 </Switch>
             </div>
         );
