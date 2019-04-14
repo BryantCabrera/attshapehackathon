@@ -55,7 +55,7 @@ export default class Bet extends Component {
                     <img className="bet__teams--FNC" src="http://logos-download.com/wp-content/uploads/2016/06/Fnatic_logo_wordmark.png"></img>
                     
                     
-                     <div className="vs">vs.</div> 
+                   vs
 
                     <img className="bet__teams--FNC" src="https://gamepedia.cursecdn.com/lolesports_gamepedia_en/thumb/e/e4/Invictus_Gaminglogo_square.png/220px-Invictus_Gaminglogo_square.png?version=b7849081deee2282ea8d89d3d6b1b0a9"></img>
 
