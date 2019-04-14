@@ -15,7 +15,7 @@ class DashboardBet extends Component {
                     <div className="dashboardbet__box">
                         <img className="dashboardbet__box--logo" alt="leagueoflegends" src="/img/leagueoflegends.jpeg" />
                         <p className="dashboardbet__box--title" >League of Legends<br />ATT vs IBM</p>
-                        <h2 className="dashboardbet__box--money">$20</h2>
+                        <h2 className="dashboardbet__box--money">${this.props.betAmount}</h2>
                     </div>
                     <div className="dashboardbet__box">
                         <img className="dashboardbet__box--logo" alt="overwatch" src="/img/Overwatch.jpg" />

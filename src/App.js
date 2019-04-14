@@ -11,6 +11,7 @@ import Nav from "./Components/Nav/Nav"
 class App extends Component {
     state = {
         loggedUser: {},
+        betAmount: 0
     };
 
     doLoginUser = async user => {
@@ -73,6 +74,12 @@ class App extends Component {
         }
     };
 
+    changeBet = (bet) => {
+        this.setState({
+            betAmount: bet
+        })
+    }
+
     render() {
         return (
             <div>
@@ -80,8 +87,8 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/login" component={() => <Login doLoginUser={this.doLoginUser}/>}/>
                     <Route exact path="/register" component={() => <Register />} />
-                    <Route exact path="/" component={() => <Dashboard />} />
-                    <Route exact path="/bet" component={() => <Bet />} />
+                    <Route exact path="/" component={() => <Dashboard newBet={this.state.betAmount} />} />
+                    <Route exact path="/bet" component={() => <Bet changeBet={this.changeBet} />} />
                     <Route exact path="/:id/wallet" component={() => <Wallet />} />
                     <Route exact path="/live-match" component={() => <Video />} />
                 </Switch>

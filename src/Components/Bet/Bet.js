@@ -4,8 +4,11 @@ import './Bet.css';
 export default class Bet extends Component {
     state = {
         chosenTeam: 'draw',
-        input: 0,
+        input: 20,
         teamA: {name: 'FNC', odds: 1.25},
+        teamACheckbox: '',
+        teamBCheckbox: '',
+        drawCheckbox: 'checked',
         teamB: {name: 'IG', odds: 2.25},
         draw: {name: 'draw', odds: 3.25},
         estimate: 0
@@ -16,6 +19,12 @@ export default class Bet extends Component {
         this.setState({
             [e.target.name]: newValue
         });
+    }
+
+    identifyTeam = (e) => {
+        this.setState({
+            chosenTeam: e.target.name
+        })
     }
 
     handleBet = (e) => {
@@ -55,7 +64,7 @@ export default class Bet extends Component {
                     <img className="bet__teams--FNC" src="http://logos-download.com/wp-content/uploads/2016/06/Fnatic_logo_wordmark.png"></img>
                     
                     
-                    vs. IG LOGO HERE
+                    vs. 
 
                     <img className="bet__teams--FNC" src="https://png.pngtree.com/element_pic/00/16/07/08577f31ad84c9e.jpg"></img>
 
@@ -63,23 +72,23 @@ export default class Bet extends Component {
                 </div>
 
                 <div className="bet__odds">
-                    <input type="checkbox" className="bet__odds__checkboxA bet__odds__checkbox" id="bet__odds__teamA"></input>
+                    <input type="checkbox" className="bet__odds__checkboxA bet__odds__checkbox" id="bet__odds__teamA" onClick={this.identifyTeam}></input>
                     <div className="bet__odds__teamA bet__odds__team">
-                        <label htmlFor="bet__odds__teamA" className="bet__odds__label">{this.state.teamA.name}</label>
+                        <label htmlFor="bet__odds__teamA" className="bet__odds__label" name="A" onClick={this.identifyTeam}>{this.state.teamA.name}</label>
 
                         <h3 className="bet__odds__team-odds">{this.state.teamA.odds}</h3>
                     </div>
 
-                    <input type="checkbox" className="bet__odds__checkbox-draw bet__odds__checkbox" id="bet__odds__draw"></input>
+                    <input type="checkbox"  className="bet__odds__checkbox-draw bet__odds__checkbox" id="bet__odds__draw" onClick={this.identifyTeam}></input>
                     <div className="bet__odds__draw bet__odds__team">
-                        <label htmlFor="bet__odds__draw" className="bet__odds__label">{this.state.draw.name}</label>
+                        <label htmlFor="bet__odds__draw" className="bet__odds__label" name="draw" onClick={this.identifyTeam}>{this.state.draw.name}</label>
 
                         <h3 className="bet__odds__team-odds">{this.state.draw.odds}</h3>
                     </div>
 
-                    <input type="checkbox" className="bet__odds__checkboxB bet__odds__checkbox" id="bet__odds__teamB"></input>
+                    <input type="checkbox" className="bet__odds__checkboxB bet__odds__checkbox" id="bet__odds__teamB" onClick={this.identifyTeam}></input>
                     <div className="bet__odds__teamB bet__odds__team">
-                        <label htmlFor="bet__odds__teamB" className="bet__odds__label">{this.state.teamB.name}</label>
+                        <label htmlFor="bet__odds__teamB" className="bet__odds__label" name="B" onClick={this.identifyTeam}>{this.state.teamB.name}</label>
 
                         <h3 className="bet__odds__team-odds">{this.state.teamB.odds}</h3>
                     </div>
@@ -87,8 +96,8 @@ export default class Bet extends Component {
 
                 <div className="bet__input">
                     <div className="bet__input__payout bet__input--input">Est. payout: ${this.state.estimate}</div>
-                    <input type="number" className="bet__input__bet bet__input--input" name={this.state.chosenTeam} value={this.state.input} placeholder="Enter an amount to bet" onChange={this.handleChange}></input>
-                    <button className="bet__input__btn bet__input--input">Confirm</button>
+                    <input type="number" className="bet__input__bet bet__input--input" name="input" value={this.state.input} placeholder="Enter an amount to bet" onChange={this.handleChange}></input>
+                    <button className="bet__input__btn bet__input--input" onSubmit={() => this.props.changeBet(this.state.input)}>Confirm</button>
                 </div>
             </div>
         );
