@@ -1,52 +1,40 @@
 /********************/
-/***** Earnings *****/
+/***** Wallet *****/
 /********************/
-.earnings {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
-    grid-template-rows: 1fr 2fr;
-    grid-row-gap: 2rem;
-    grid-template-areas: "earnings bets"
-                         "graph graph";
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
+.wallet {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin-top: 2rem;
 }
 
-.earnings__earnings {
-    grid-area: earnings;
+.wallet__earnings {
+    height: 20rem;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: .2rem solid #333;
 }
 
-.earnings__bets {
-    grid-area: bets;
+.totals-box__item {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.earnings__graph {
-    grid-area: graph;
-}
-
-/***** Totals Box *****/
-.totals-box {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 2fr 1fr;
-    grid-template-areas: "title toggle"
-                         "total btn";
-    justify-content: center;
-    align-items: center;
+/***** Graph *****/
+.wallet__graph {
+    height: 35rem;
+    width: 90vw;
     padding: .5rem;
     border: .2rem solid #333;
 }
 
-.totals-box__title {
-    grid-area: title;
-    justify-self: flex-start;
-    align-self: flex-start;
-}
-
 .totals-box__toggle {
-    grid-area: toggle;
     justify-self: flex-end;
     display: flex;
     flex-flow: row wrap;
@@ -55,13 +43,14 @@
 }
 
 .totals-box__toggle li:not(:last-child) {
-    margin-right: .5rem;
+    margin-right: 1rem;
 }
 
 .totals-box__toggle li a:link,
 .totals-box__toggle li a:visited {
     text-decoration: none;
     color: #333;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
@@ -70,30 +59,8 @@
     border-bottom: .2rem solid #333;
 }
 
-.totals-box__total {
-    grid-area: total;
-    justify-self: flex-start;
-}
-
-.totals-box__btn {
-    grid-area: btn;
-    justify-self: flex-end;
-    height: 3rem;
-    width: 10rem;
-    background-color: #333;
-    color: white;
-    border-radius: .3rem;
-}
-
-/***** Graph Box *****/
-.earnings__graph {
-    height: 100%;
+.wallet__graph__toggle {
     width: 100%;
-    border: .2rem solid #333;
-}
-
-.earnings__graph__toggle {
-    width: 95%;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
