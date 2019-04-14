@@ -1,6 +1,6 @@
 import React from 'react'
 import ModelComp from '../Modal/ModalComp'
-import { Button, Grid } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 class ModalSection extends React.Component {
 

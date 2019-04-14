@@ -40,9 +40,9 @@ export default class Wallet extends Component {
                         <h2 className="wallet__graph__title">Activity</h2>
 
                         <ul className="wallet__graph__toggle totals-box__toggle">
-                            <li><a href="#">Week</a></li>
-                            <li><a href="#">Month</a></li>
-                            <li><a href="#">Year</a></li>
+                            <li><a href="#top">Week</a></li>
+                            <li><a href="#top">Month</a></li>
+                            <li><a href="#top">Year</a></li>
                         </ul>
                     </div>
                     <ResponsiveContainer maxWidth={400} maxHeight={400} minHeight={100}>

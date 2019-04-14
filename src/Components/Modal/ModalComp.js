@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Header, Button, Icon } from 'semantic-ui-react'
+import { Modal, Header, Button } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
 class MyModal extends React.Component {
