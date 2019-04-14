@@ -8,6 +8,8 @@
     align-items: center;
     height: 10rem;
     width: 100%;
+    background-color:white;
+    padding-top: 9rem
 }
 
 .bet__teams {
@@ -19,13 +21,14 @@
     flex-flow: row wrap;
     place-items: center;
     margin-bottom: 1rem;
+    
 }
 
 /***** Team Odds *****/
 .bet__odds__team {
     height: 3rem;
-    width: 10rem;
-    border: .2rem solid #333;
+    width: 14rem;
+    border: .1rem solid #333;
     /* display: flex;
     justify-content: space-between; */
     display: grid;
@@ -33,7 +36,7 @@
     grid-template-rows: 1fr;
     grid-template-areas: "info";
     align-items: center;
-    padding: 0 .5rem;
+    padding: .5rem;
 }
 
 .bet__odds__team h3 {
@@ -83,7 +86,7 @@
 .bet__input--input {
     height: 3rem;
     width: 10rem;
-    border: .2rem solid #333;
+    border: .1rem solid #333;
     align-items: center;
 }
 
@@ -102,4 +105,9 @@
     border: solid 2px #d8d8d8;
     background-color: #d8d8d8;
     color: #fff;
+}
+
+.bet__teams--FNC {
+    height: 100px;
+    width: 100px;
 }

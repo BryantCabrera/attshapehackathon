@@ -52,27 +52,34 @@ export default class Bet extends Component {
         return (
             <div className="bet">
                 <div className="bet__teams">
-                    FNC LOGO HERE vs. IG LOGO HERE
+                    <img className="bet__teams--FNC" src="http://logos-download.com/wp-content/uploads/2016/06/Fnatic_logo_wordmark.png"></img>
+                    
+                    
+                    vs. IG LOGO HERE
+
+                    <img className="bet__teams--FNC" src="https://png.pngtree.com/element_pic/00/16/07/08577f31ad84c9e.jpg"></img>
+
+                    
                 </div>
 
                 <div className="bet__odds">
                     <input type="checkbox" className="bet__odds__checkboxA bet__odds__checkbox" id="bet__odds__teamA"></input>
                     <div className="bet__odds__teamA bet__odds__team">
-                        <label for="bet__odds__teamA" className="bet__odds__label">{this.state.teamA.name}</label>
+                        <label htmlFor="bet__odds__teamA" className="bet__odds__label">{this.state.teamA.name}</label>
 
                         <h3 className="bet__odds__team-odds">{this.state.teamA.odds}</h3>
                     </div>
 
                     <input type="checkbox" className="bet__odds__checkbox-draw bet__odds__checkbox" id="bet__odds__draw"></input>
                     <div className="bet__odds__draw bet__odds__team">
-                        <label for="bet__odds__draw" className="bet__odds__label">{this.state.draw.name}</label>
+                        <label htmlFor="bet__odds__draw" className="bet__odds__label">{this.state.draw.name}</label>
 
                         <h3 className="bet__odds__team-odds">{this.state.draw.odds}</h3>
                     </div>
 
                     <input type="checkbox" className="bet__odds__checkboxB bet__odds__checkbox" id="bet__odds__teamB"></input>
                     <div className="bet__odds__teamB bet__odds__team">
-                        <label for="bet__odds__teamB" className="bet__odds__label">{this.state.teamB.name}</label>
+                        <label htmlFor="bet__odds__teamB" className="bet__odds__label">{this.state.teamB.name}</label>
 
                         <h3 className="bet__odds__team-odds">{this.state.teamB.odds}</h3>
                     </div>

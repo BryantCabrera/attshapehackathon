@@ -7,12 +7,13 @@
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
     height: 100vh;
+    /* background: #004976; */
   }
   .container > div {
     border: 1px dashed #888;
   }
   .active__bets {
-    background: rgb(44, 43, 43);
+    background: #004976;
   }
   
   .active__bets {

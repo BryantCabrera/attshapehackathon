@@ -16,7 +16,7 @@ class Nav extends Component {
       <div style={{ paddingLeft: "20px"}}>
         <div className="search">
           <form onSubmit={this.handleSubmit}>
-            <button><i className="fa fa-search"/></button>
+            <button className="search__button"><i className="fa fa-search"/></button>
             <input type="text" placeholder="Search" className="search__form--input"/>
           </form>
         </div>
