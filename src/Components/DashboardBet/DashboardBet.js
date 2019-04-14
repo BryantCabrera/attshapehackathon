@@ -6,7 +6,7 @@ class DashboardBet extends Component {
         return (
             <div>
                 <div className="dashboardbet_yourbets">
-                    <h1>Your bets!</h1>
+                    <h1 className="dashboardbet__header">Your bets!</h1>
                     <div className="dashboardbet__box">
                         <img className="dashboardbet__box--logo" src="/img/csgo.jpg" />
                         <p className="dashboardbet__box--title" >Counter-Strike: GO<br />Shooter vs Dust2</p>
@@ -35,7 +35,7 @@ class DashboardBet extends Component {
                 </div>
 
                 <div className="dashboardbet_yourbets">
-                    <h1>Biggest Pool</h1>
+                    <h1 className="dashboardbet__header">Biggest Pool</h1>
                     <div className="dashboardbet__box">
                         <img className="dashboardbet__box--logo" src="/img/csgo.jpg" />
                         <p className="dashboardbet__box--title" >Counter-Strike: GO<br />Shooter vs Dust2</p>

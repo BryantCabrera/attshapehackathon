@@ -49,4 +49,14 @@
 
 .fa-search {
   color: white;
+  background: none;
+}
+
+.search__button {
+  background-color: #004976;
+  border: none;
+}
+
+:focus {
+  outline: none !important;
 }

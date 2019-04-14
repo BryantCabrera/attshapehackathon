@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Video.css"
 import Bet from '../Bet/Bet'
+import DashboardBet from '../DashboardBet/DashboardBet'
 
 export default class Video extends Component {
   render() {
@@ -8,8 +9,8 @@ export default class Video extends Component {
       <div className="video__main-container">
 
         <div className="active__bets">
-          Active Bets
-      </div>
+          <DashboardBet />
+        </div>
 
 
         <div className="video__video-container">

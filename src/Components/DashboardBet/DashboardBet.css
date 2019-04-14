@@ -15,7 +15,7 @@
     flex-direction: row;
     /* justify-content: space-around; */
     text-align: center;
-    padding: 7px;
+    padding: .3rem;
     color: white;
 }
 
@@ -27,12 +27,24 @@
 
 .dashboardbet__box--title {
     flex: 4 0 auto;
+    padding: 1rem
 }
 
 .dashboardbet__box--money {
     flex: 1 0 auto;
+    font-size: 1.2rem;
+    padding-right: 1rem
 }
 
 .dashboardbet_bet {
     color: white
+}
+
+.dashboardbet__yourbets {
+    background-color: #004976;
+}
+
+.dashboardbet__header {
+    padding: 2rem;
+    color: white;
 }
