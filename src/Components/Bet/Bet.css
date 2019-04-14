@@ -2,95 +2,104 @@
 /***** Bets *****/
 /***************/
 .bet {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 4rem 20rem;
-    grid-template-areas: "title title title"
-                         "teamA stats teamB";
-    justify-content: center;
-    align-items: center;
-}
-
-.bet__title {
-    grid-area: title;
-    justify-self: center;
-    align-self: center;
-}
-
-.bet__teamA {
-    grid-area: teamA;
-}
-
-.bet__teamB {
-    grid-area: teamB;
-}
-
-.bet__stats {
-    grid-area: stats;
-}
-
-.bet__teamA, 
-.bet__teamB {
-    /* border: 1px dashed black; */
-}
-
-/***** Team Grid *****/
-.bet__team {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr) 1.5fr;
-    grid-template-areas: "title title"
-                         "pool mine"
-                         "input input"
-                         "btn btn";
-    justify-content: center;
-    align-items: center;
-    font-size: .8rem;
-}
-
-.bet__team__title {
-    grid-area: title;
-    justify-self: center;
-    align-self: center;
-}
-
-.bet__team__pool {
-    grid-area: pool;
-    justify-self: center;
-    align-self: center;
-}
-
-.bet__team__mine {
-    grid-area: mine;
-    justify-self: center;
-    align-self: center;
-}
-
-.bet__team__input {
-    grid-area: input;
-    justify-self: center;
-    align-self: center;
-}
-
-.bet__team__btn {
-    grid-area: btn;
-    justify-self: center;
-    align-self: center;
-}
-
-/***** Stats Grid *****/
-.bet__stats {
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: "spreadTitle"
-                         "spreadStats"
-                         "winTitle"
-                         "winAmount";
-    */
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: .8rem
+    height: 10rem;
+    width: 100%;
+}
+
+.bet__teams {
+    margin-bottom: 1rem;
+}
+
+.bet__odds {
+    display: flex;
+    flex-flow: row wrap;
+    place-items: center;
+    margin-bottom: 1rem;
+}
+
+/***** Team Odds *****/
+.bet__odds__team {
+    height: 3rem;
+    width: 10rem;
+    border: .2rem solid #333;
+    /* display: flex;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "info";
+    align-items: center;
+    padding: 0 .5rem;
+}
+
+.bet__odds__team h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.bet__odds__checkbox {
+    grid-area: info;
+    display: none;
+}
+
+.bet__odds__checkboxA:checked ~ .bet__odds__teamA {
+    background-color: #004976;
+    color: white;
+}
+
+.bet__odds__checkboxB:checked ~ .bet__odds__teamB {
+    background-color: #004976;
+    color: white;
+}
+
+.bet__odds__checkbox-draw:checked ~ .bet__odds__draw {
+    background-color: #004976;
+    color: white;
+}
+
+.bet__odds__label {
+    grid-area: info;
+    justify-self: flex-start;
+    width: 100%;
+}
+
+.bet__odds__team-odds {
+    grid-area: info;
+    justify-self: flex-end;
+}
+
+/***** Input *****/
+.bet__input {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.bet__input--input {
+    height: 3rem;
+    width: 10rem;
+    border: .2rem solid #333;
+    align-items: center;
+}
+
+.bet__input__bet {
+    text-align: center;
+}
+
+.bet__input__payout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bet__input__btn  {
+    border-radius: 2px;
+    border: solid 2px #d8d8d8;
+    background-color: #d8d8d8;
+    color: #fff;
 }

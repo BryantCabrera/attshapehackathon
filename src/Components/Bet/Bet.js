@@ -3,15 +3,12 @@ import './Bet.css';
 
 export default class Bet extends Component {
     state = {
-        teamAInputDisplay: 'block',
-        teamAValue: 0.00,
-        teamAPool: 0.00,
-        teamAMine: 0.00,
-        teamBInputDisplay: 'block',
-        teamBValue: 0.00,
-        teamBPool: 0.00,
-        teamBMine: 0.00,
-        winEstimate: 0.00
+        chosenTeam: 'draw',
+        input: 0,
+        teamA: {name: 'FNC', odds: 1.25},
+        teamB: {name: 'IG', odds: 2.25},
+        draw: {name: 'draw', odds: 3.25},
+        estimate: 0
     }
 
     handleChange = (e) => {
@@ -54,33 +51,37 @@ export default class Bet extends Component {
     render() {
         return (
             <div className="bet">
-                <h1 className="bet__title">Current Bets</h1>
-
-                <div className="bet__teamA bet__team">
-                    <h2 className="bet__team__title">TeamA</h2>
-                    <h3 className="bet__team__pool">Pool: ${this.state.teamAPool}</h3>
-                    <h3 className="bet__team__mine" style={{display: `${this.state.teamAInputDisplay}` }}>My Bet: ${this.state.teamAMine}</h3>
-                    <div className="bet__team__input" style={{display: `${this.state.teamAInputDisplay}` }}>
-                        $<input type="number" name="teamAValue" value={this.state.teamAValue} onChange={this.handleChange} min="0.01" step="0.01" max="100.00"></input>
-                    </div>
-                    <button class="bet__team__btn" name="A" onClick={this.handleBet} style={{display: `${this.state.teamAInputDisplay}` }}>Bet</button>
+                <div className="bet__teams">
+                    FNC LOGO HERE vs. IG LOGO HERE
                 </div>
 
-                <div className="bet__teamB bet__team">
-                    <h2 className="bet__team__title">TeamB</h2>
-                    <h3 className="bet__team__pool">Pool: ${this.state.teamBPool}</h3>
-                    <h3 className="bet__team__mine" style={{display: `${this.state.teamBInputDisplay}` }}>My Bet: ${this.state.teamBMine}</h3>
-                    <div className="bet__team__input" style={{display: `${this.state.teamBInputDisplay}` }}>
-                        $<input type="number" name="teamBValue" value={this.state.teamBValue} onChange={this.handleChange}min="0.01" step="0.01" max="100.00"></input>
+                <div className="bet__odds">
+                    <input type="checkbox" className="bet__odds__checkboxA bet__odds__checkbox" id="bet__odds__teamA"></input>
+                    <div className="bet__odds__teamA bet__odds__team">
+                        <label for="bet__odds__teamA" className="bet__odds__label">{this.state.teamA.name}</label>
+
+                        <h3 className="bet__odds__team-odds">{this.state.teamA.odds}</h3>
                     </div>
-                    <button class="bet__team__btn" name="B" onClick={this.handleBet} style={{display: `${this.state.teamBInputDisplay}` }}>Bet</button>
+
+                    <input type="checkbox" className="bet__odds__checkbox-draw bet__odds__checkbox" id="bet__odds__draw"></input>
+                    <div className="bet__odds__draw bet__odds__team">
+                        <label for="bet__odds__draw" className="bet__odds__label">{this.state.draw.name}</label>
+
+                        <h3 className="bet__odds__team-odds">{this.state.draw.odds}</h3>
+                    </div>
+
+                    <input type="checkbox" className="bet__odds__checkboxB bet__odds__checkbox" id="bet__odds__teamB"></input>
+                    <div className="bet__odds__teamB bet__odds__team">
+                        <label for="bet__odds__teamB" className="bet__odds__label">{this.state.teamB.name}</label>
+
+                        <h3 className="bet__odds__team-odds">{this.state.teamB.odds}</h3>
+                    </div>
                 </div>
 
-                <div className="bet__stats">
-                    <h2 className="bet__stats__spread--title">Spread/Odds</h2>
-                    <h3 className="bet__stats__spread--stats">7:3</h3>
-                    <h2 className="bet__stats__win--title">Est. Win Amount</h2>
-                    <h3 className="bet__stats__win--total">${this.state.winEstimate}</h3>
+                <div className="bet__input">
+                    <div className="bet__input__payout bet__input--input">Est. payout: ${this.state.estimate}</div>
+                    <input type="number" className="bet__input__bet bet__input--input" name={this.state.chosenTeam} value={this.state.input} placeholder="Enter an amount to bet" onChange={this.handleChange}></input>
+                    <button className="bet__input__btn bet__input--input">Confirm</button>
                 </div>
             </div>
         );
