@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter, NavLink } from "react-router-dom";
-import "./Register.css"
+import "./Auth.css"
 
 class Register extends Component {
   state = {
@@ -40,7 +40,7 @@ class Register extends Component {
       }
       const parseResponse = await loginResponse.json();
       if (parseResponse.message === "Registration successful.") {
-        this.props.history.push(`/dashboard`);
+        this.props.history.push(`/`);
       }
     } catch (error) {
       console.log(error);
@@ -51,16 +51,17 @@ class Register extends Component {
     return (
            <div className='formCenter'>
                 {/* <img id="relocater-logo" src="./logo.png" alt="Relocater Logo" title="Relocater Logo"></img> */}
+                <h2>Join Betsee!</h2>
                 <div className='pageSwitcher'>
-                <NavLink exact to="/login" activeClassName="pageSwitcher__item--active" className="ageSwitcher__item">Sign In</NavLink>
+                <NavLink exact to="/login" activeClassName="pageSwitcher__item--active" className="pageSwitcher__item">Login</NavLink>
                 <NavLink exact to="/register" activeClassName="ageSwitcher__item--active" className="pageSwitcher__item pageSwitcher__item--active">Register</NavLink>
                 </div>
                 <form onSubmit={this.doHandleSubmit} className='formFields'>
                     <div className='formField'>
-                        <label className='formField__label'></label>
+                        <label className='formField__label'>Username:</label>
                         <input
                         type='text'
-                        placeholder='Enter your name'
+                        placeholder='Enter your name!'
                         name='name'
                         value={this.state.name}
                         onChange={this.doHandleInput}
@@ -69,10 +70,10 @@ class Register extends Component {
                     </div>
 
                     <div className='formField'>
-                        <label className='formField__label'></label>
+                        <label className='formField__label'>Email:</label>
                         <input
                         type='email'
-                        placeholder='Enter your email'
+                        placeholder='Enter your email!'
                         name='email'
                         value={this.state.email}
                         onChange={this.doHandleInput}
@@ -81,10 +82,10 @@ class Register extends Component {
                     </div>
 
                     <div className='formField'>
-                        <label className='formField__label'></label>
+                        <label className='formField__label'>Password:</label>
                         <input
                         type='password'
-                        placeholder='Enter your Password'
+                        placeholder='Enter your password!'
                         name='password'
                         value={this.state.password}
                         onChange={this.doHandleInput}

@@ -15,7 +15,7 @@ export default class Video extends Component {
         <div className="video__video-container">
           <iframe
             title="Video"
-            src="https://player.twitch.tv/?channel=riotgamesbrazil"
+            src="https://player.twitch.tv/?channel=riotgames"
             frameBorder="0"
             allowFullScreen={true}
             scrolling="no"
@@ -27,7 +27,7 @@ export default class Video extends Component {
         <div className="video__chat">
           <iframe
             title="Chat"
-            src="https://www.twitch.tv/embed/riotgamesbrazil/chat"
+            src="https://www.twitch.tv/embed/riotgames/chat"
             frameBorder="0"
             scrolling="no"
             height="100%"

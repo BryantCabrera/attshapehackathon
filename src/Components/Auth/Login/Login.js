@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter , NavLink} from "react-router-dom";
+import "./Auth.css"
 
 class Login extends Component {
   state = {
@@ -20,27 +21,45 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.doHandleSubmit}>
-          <input
-            placeholder="email"
-            type="text"
-            name="email"
-            value={this.state.email}
-            onChange={this.doHandleInput}
-            required
-          />
-          <input
-            placeholder="password"
-            type="text"
-            name="password"
-            value={this.state.password}
-            onChange={this.doHandleInput}
-            required
-          />
-          <button>Click here to login!</button>
-        </form>
-      </div>
+            <div className='formCenter'>
+              <h2>Join Betsee!</h2>
+                <div className='pageSwitcher'>
+                    <NavLink exact to="/login" activeClassName="pageSwitcher__item--active" className="pageSwitcher__item pageSwitcher__item--active">Login</NavLink>
+                    <NavLink exact to="/register" activeClassName="pageSwitcher__item--active" className="pageSwitcher__item">Register</NavLink>
+                </div>
+                <div>
+                    <form className="formFields" onSubmit={this.doHandleSubmit}>
+                        <div className='formField'>
+                        <label className='formField__label'>Email:</label>
+                            <input
+                                placeholder='Email'
+                                type='text'
+                                name='email'
+                                value={this.state.email}
+                                onChange={this.doHandleInput}
+                                className="formField__input"
+                                required
+                            />
+                        </div>
+                        <div className='formField'>
+                        <label className='formField__label'>Password:</label>
+                            <input
+                                type='password'
+                                name='password'
+                                placeholder='Password'
+                                value={this.state.password}
+                                onChange={this.doHandleInput}
+                                className="formField__input"
+                                required
+                            />
+                        </div>
+                        <label className='formField__label'>Having trouble logging in?</label>
+                        <div className='formField'>
+                            <button type='submit' className="formField__button">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
     );
   }
 }

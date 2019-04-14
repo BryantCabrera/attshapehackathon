@@ -1,16 +1,52 @@
-.ul {
+.nav {
   align-items: center;
-  background-color: #9b9b9b;
+  background-color: #2274a5;
   display: flex;
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
 
-.ul__nav--logging {
+.nav__logging {
   margin-right: 20px;
   margin-left: auto;
 }
 
-.ul__nav--link {
+.nav__link {
+  color: white;
+  padding: 5px 25px;
+  font-size: .9em;
+  border: none;
+  outline: none;
+  text-decoration: none;
   margin-left: 20px;
+}
+
+.nav__link:hover {
+  color: black;
+}
+
+.search {
+  background-color: #004976;
+  align-items: center;
+}
+
+.search__form--padding {
+  margin-right: 20px;
+}
+
+.search__form--input {
+  background-color: #004976;
+  color: white;
+  font-size: .9em;
+  border: none;
+  outline: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+.fa-search {
+  color: white;
 }
